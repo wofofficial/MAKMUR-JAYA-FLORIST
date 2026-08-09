@@ -1,0 +1,297 @@
+/* ==========================================
+   1. RESET & VARIABEL UTAMA (THEMA MERAH ELEGAN)
+   ========================================== */
+:root {
+    --primary-red: #8B0000;       /* Crimson / Merah Marun */
+    --accent-red: #B22222;        /* Firebrick Red */
+    --gold: #D4AF37;              /* Emas Murni */
+    --dark-bg: #1A0D0D;           /* Hitam Kemerahan */
+    --light-bg: #FAF6F6;          /* Putih Krem/Kertas */
+    --text-dark: #2C2C2C;         /* Teks Gelap Utama */
+    --text-light: #FFFFFF;        /* Teks Terang */
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. HEADER & CONTAINER LOGO
+   ========================================== */
+header {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-red) 100%);
+    color: var(--text-light);
+    text-align: center;
+    padding: 35px 20px 25px;
+    border-bottom: 3px solid var(--gold);
+}
+
+.logo-container {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+header .tagline {
+    font-size: 0.95rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   3. NAVIGASI (STICKY BAR)
+   ========================================== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--dark-bg);
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 16px 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-red);
+    color: var(--gold);
+}
+
+/* ==========================================
+   4. KATALOG & CARD PRODUK
+   ========================================== */
+.katalog-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-alt {
+    background-color: #F2ECEC;
+}
+
+.judul-seksi {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.judul-seksi::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--gold);
+    margin: 10px auto 0;
+}
+
+/* GRID LAYOUT UNTUK GAMBAR PRODUK */
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* KARTU PRODUK */
+.produk-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(139, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produk-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(139, 0, 0, 0.15);
+}
+
+/* KHUSUS GAMBAR: UTUH DAN TIDAK POTONG (NO CROP) */
+.img-wrapper {
+    width: 100%;
+    height: 320px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Memastikan gambar 100% tampil penuh tanpa terpotong */
+    transition: transform 0.3s ease;
+}
+
+.produk-card:hover .img-wrapper img {
+    transform: scale(1.03);
+}
+
+/* TOMBOL BELI VIA WHATSAPP */
+.btn-beli {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn-beli:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+}
+
+/* ==========================================
+   5. SEKSI KONTAK
+   ========================================== */
+.kontak-section {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.kontak-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.kontak-section p {
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #dddddd;
+}
+
+.kontak-wa-card {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--gold);
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.kontak-wa-card:hover {
+    background-color: var(--primary-red);
+}
+
+.wa-info span {
+    display: block;
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+.wa-info strong {
+    font-size: 1.2rem;
+    color: var(--gold);
+}
+
+/* ==========================================
+   6. FOOTER
+   ========================================== */
+footer {
+    background-color: #0d0606;
+    color: #888888;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid #222222;
+}
+
+/* ==========================================
+   7. RESPONSIF PADA SMARTHPHONE (HP)
+   ========================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav a {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+    }
+
+    .produk-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+    
+    .img-wrapper {
+        height: 260px;
+    }
+}
